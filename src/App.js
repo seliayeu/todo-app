@@ -47,8 +47,6 @@ const App = () => {
       case "changeStatus":
         return state.map(todo => todo.id === action.payload ? { ...todo, completed: !todo.completed} : todo)
       case "remakeAfterSwap":
-        console.log(state[action.payload.source])
-        console.log(state[action.payload.destination])
         const res = [ ...state ]
         res.splice(action.payload.source, 1)
         res.splice(action.payload.destination, 0, state[action.payload.source])
